@@ -9,12 +9,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
+  isInline: Boolean;
 
   constructor(private fb : FormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      input: [null]
+      input: [null, {
+        updateOn: 'blur',
+        validators: [
+            Validators.required,
+            Validators.minLength(3)
+        ]
+    }]
     });
   }
 
@@ -24,6 +31,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void{
     console.log('Submitted !!');
+  }
+
+  onToggleInline(){
+    this.isInline = !this.isInline;
   }
 
 }
