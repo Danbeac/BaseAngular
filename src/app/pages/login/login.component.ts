@@ -60,6 +60,11 @@ export class LoginComponent implements OnInit {
           updateOn: 'change', validators: [
               Validators.required
           ]
+      }],
+      radios: [null, {
+          updateOn: 'change', validators: [
+              Validators.required
+          ]
       }]
     });
   }
