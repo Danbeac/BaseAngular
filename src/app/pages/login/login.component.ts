@@ -70,6 +70,11 @@ export class LoginComponent implements OnInit {
           updateOn: 'change', validators: [
               Validators.required
           ]
+      }],
+      dateRange: [null, {
+          updateOn: 'change', validators: [
+              Validators.required
+          ]
       }]
     });
   }
