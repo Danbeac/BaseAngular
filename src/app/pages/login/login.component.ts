@@ -22,19 +22,21 @@ export class LoginComponent implements OnInit {
         null,
         {
           updateOn: 'blur',
-          validators: [
-            Validators.required,
-            Validators.pattern(regex.email),
-          ],
+          validators: [Validators.required, Validators.pattern(regex.email)],
         },
       ],
       age: [
         null,
         {
           updateOn: 'blur',
-          validators: [
-            Validators.required,
-            Validators.pattern(regex.numbers)],
+          validators: [Validators.required, Validators.pattern(regex.numbers)],
+        },
+      ],
+      password: [
+        null,
+        {
+          updateOn: 'blur',
+          validators: [Validators.required],
         },
       ],
     });

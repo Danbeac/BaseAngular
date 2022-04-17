@@ -7,8 +7,13 @@
   <app-form-field label="Email" [required]="true" [control]="form.controls.email" [isInline]="isInline" [patternError]="regexErrors.email">
     <app-input formControlName="email"></app-input>
   </app-form-field>
+
   <app-form-field label="Age" [required]="true" [control]="form.controls.age" [isInline]="isInline" [patternError]="regexErrors.numbers">
     <app-input formControlName="age"></app-input>
+  </app-form-field>
+
+  <app-form-field label="Password" [required]="true" [control]="form.controls.password" [isInline]="isInline">
+    <app-password formControlName="password"></app-password>
   </app-form-field>
 </form>
 
