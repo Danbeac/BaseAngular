@@ -4,8 +4,11 @@
   <app-button (click)="onPatchValue()">Patch Value</app-button>
   <app-button (click)="onToggleInline()">Toggle Inline</app-button>
 
-  <app-form-field label="Input" [required]="true" [control]="form.controls.input" [isInline]="isInline">
-    <app-input formControlName="input"></app-input>
+  <app-form-field label="Username" [required]="true" [control]="form.controls.input" [isInline]="isInline">
+    <app-input formControlName="username"></app-input>
+  </app-form-field>
+  <app-form-field label="Age" [required]="true" [control]="form.controls.input" [isInline]="isInline">
+    <app-input formControlName="age"></app-input>
   </app-form-field>
 </form>
 

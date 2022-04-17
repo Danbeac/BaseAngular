@@ -15,18 +15,25 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      input: [null, {
+      username: [null, {
         updateOn: 'blur',
         validators: [
             Validators.required,
             Validators.minLength(3)
         ]
-    }]
+    }],
+    age: [null, {
+      updateOn: 'blur',
+      validators: [
+          Validators.required,
+          Validators.minLength(3)
+      ]
+  }]
     });
   }
 
   onPatchValue(): void{
-    this.form.patchValue({ input: 'test'});
+    this.form.patchValue({ age: '21'});
   }
 
   onSubmit(): void{
