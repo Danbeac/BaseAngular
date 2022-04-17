@@ -56,6 +56,11 @@ export class LoginComponent implements OnInit {
           validators: [Validators.required],
         },
       ],
+      checkboxes: [null, {
+          updateOn: 'change', validators: [
+              Validators.required
+          ]
+      }]
     });
   }
 
