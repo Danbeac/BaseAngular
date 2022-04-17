@@ -15,7 +15,9 @@
         <span *ngSwitchCase="'requiredtrue'">This field is required</span>
         <span *ngSwitchCase="'minlength'">At least {{control.errors[errorKey].requiredLength}} characters</span>
         <span *ngSwitchCase="'maxlength'">No more than {{control.errors[errorKey].requiredLength}}</span>
-        <span *ngSwitchCase="'pattern'"></span>
+        <span *ngSwitchCase="'pattern'">
+          <span *ngIf="patternError">{{patternError}}</span>
+        </span>
       </ng-container>
     </div>
 

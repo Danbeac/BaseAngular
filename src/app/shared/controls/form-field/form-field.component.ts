@@ -12,10 +12,12 @@ export class FormFieldComponent implements OnInit {
   @Input() required: boolean;
   @Input() isInline: boolean;
   @Input() control: AbstractControl;
+  @Input() patternError: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.control && this.control.errors && Object.keys(this.control.errors)[0]);
   }
 
   hasError(): boolean {

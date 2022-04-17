@@ -1,47 +1,54 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { regex, regexErrors } from 'src/app/shared';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
   form: FormGroup;
   isInline: Boolean;
+  regexErrors = regexErrors;
 
-  constructor(private fb : FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+    this.isInline = true;
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      username: [null, {
-        updateOn: 'blur',
-        validators: [
+      email: [
+        null,
+        {
+          updateOn: 'blur',
+          validators: [
             Validators.required,
-            Validators.minLength(3)
-        ]
-    }],
-    age: [null, {
-      updateOn: 'blur',
-      validators: [
-          Validators.required,
-          Validators.minLength(3)
-      ]
-  }]
+            Validators.pattern(regex.email),
+          ],
+        },
+      ],
+      age: [
+        null,
+        {
+          updateOn: 'blur',
+          validators: [
+            Validators.required,
+            Validators.pattern(regex.numbers)],
+        },
+      ],
     });
   }
 
-  onPatchValue(): void{
-    this.form.patchValue({ age: '21'});
+  onPatchValue(): void {
+    this.form.patchValue({ age: '21' });
   }
 
-  onSubmit(): void{
+  onSubmit(): void {
     console.log('Submitted !!');
   }
 
-  onToggleInline(){
+  onToggleInline() {
     this.isInline = !this.isInline;
   }
-
 }
