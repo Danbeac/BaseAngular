@@ -19,7 +19,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Output() changed = new EventEmitter<string>();
 
   value: string;
-  isDisable: boolean;
+  isDisabled: boolean;
 
   constructor() { }
 
@@ -41,7 +41,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.propagateTouched = fn;
   }
   setDisabledState?(isDisabled: boolean): void {
-    this.isDisable = isDisabled;
+    this.isDisabled = isDisabled;
   }
 
   onKeyUp(value: string) : void {
