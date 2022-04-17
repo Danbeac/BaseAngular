@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BaseEstructureProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# BaseAngular
+Angular Project with the architecture for scalable and maintainable apps
+>>>>>>> b397dfb8660f9941ddbd2f4b63aff385f3958d85
