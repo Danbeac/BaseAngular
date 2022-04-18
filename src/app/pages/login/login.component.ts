@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
       { label: 'Second', value: 2 },
       { label: 'Third', value: 3 },
       { label: 'Fourth', value: 4 },
-      { label: 'Fifth', value: 5 }
-  ];
+      { label: 'Fifth', value: 5 },
+    ];
   }
 
   ngOnInit(): void {
@@ -49,6 +49,13 @@ export class LoginComponent implements OnInit {
           validators: [Validators.required],
         },
       ],
+      autocomplete: [
+        null,
+        {
+          updateOn: 'change',
+          validators: [Validators.required],
+        },
+      ],
       select: [
         null,
         {
@@ -56,26 +63,34 @@ export class LoginComponent implements OnInit {
           validators: [Validators.required],
         },
       ],
-      checkboxes: [null, {
-          updateOn: 'change', validators: [
-              Validators.required
-          ]
-      }],
-      radios: [null, {
-          updateOn: 'change', validators: [
-              Validators.required
-          ]
-      }],
-      date: [null, {
-          updateOn: 'change', validators: [
-              Validators.required
-          ]
-      }],
-      dateRange: [null, {
-          updateOn: 'change', validators: [
-              Validators.required
-          ]
-      }]
+      checkboxes: [
+        null,
+        {
+          updateOn: 'change',
+          validators: [Validators.required],
+        },
+      ],
+      radios: [
+        null,
+        {
+          updateOn: 'change',
+          validators: [Validators.required],
+        },
+      ],
+      date: [
+        null,
+        {
+          updateOn: 'change',
+          validators: [Validators.required],
+        },
+      ],
+      dateRange: [
+        null,
+        {
+          updateOn: 'change',
+          validators: [Validators.required],
+        },
+      ],
     });
   }
 
