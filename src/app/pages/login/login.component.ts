@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ControlItem } from 'src/app/models/frontend';
-import { regex, regexErrors } from 'src/app/shared';
+import { markFormGroupTouched, regex, regexErrors } from 'src/app/shared';
 
 @Component({
   selector: 'app-login',
@@ -95,14 +95,37 @@ export class LoginComponent implements OnInit {
   }
 
   onPatchValue(): void {
-    this.form.patchValue({ age: '21' });
+    this.form.patchValue({
+      email: 'd4nbeac@hotmail.com',
+      age: 22,
+      password: 'qwerty',
+      autocomplete: 1,
+      select: 2,
+      checkboxes: [3],
+      radios: 4,
+      date: new Date().getTime(),
+      dateRange: {
+          from: new Date(2019, 5, 10).getTime(),
+          to: new Date(2019, 5, 25).getTime()
+      }
+    });
   }
 
   onSubmit(): void {
-    console.log('Submitted !!');
+    if (!this.form.valid) {
+      markFormGroupTouched(this.form);
+    }
   }
 
   onToggleInline() {
     this.isInline = !this.isInline;
+  }
+
+  onToggleDisable(){
+    if (this.form.enabled) {
+      this.form.disable();
+    } else {
+        this.form.enable();
+    }
   }
 }
