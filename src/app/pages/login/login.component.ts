@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   isInline: Boolean;
   regexErrors = regexErrors;
   items: ControlItem[];
+  showSpinner = false;
 
   constructor(private fb: FormBuilder) {
     this.isInline = true;
@@ -105,9 +106,9 @@ export class LoginComponent implements OnInit {
       radios: 4,
       date: new Date().getTime(),
       dateRange: {
-          from: new Date(2019, 5, 10).getTime(),
-          to: new Date(2019, 5, 25).getTime()
-      }
+        from: new Date(2019, 5, 10).getTime(),
+        to: new Date(2019, 5, 25).getTime(),
+      },
     });
   }
 
@@ -121,11 +122,23 @@ export class LoginComponent implements OnInit {
     this.isInline = !this.isInline;
   }
 
-  onToggleDisable(){
+  onToggleDisable() {
     if (this.form.enabled) {
       this.form.disable();
     } else {
-        this.form.enable();
+      this.form.enable();
     }
+  }
+
+  onToggleSpinner(): void {
+    this.showSpinner = !this.showSpinner;
+  }
+
+  onSuccess(): void {
+    // this.notification.success('Everything is fine!');
+  }
+
+  onError(): void {
+    // this.notification.error('Oops! Something is wrong');
   }
 }
