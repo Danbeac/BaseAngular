@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { ControlItem } from 'src/app/models/frontend';
 import { markFormGroupTouched, regex, regexErrors } from 'src/app/shared';
+import { NotificationService } from 'src/app/services';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,7 @@ export class LoginComponent implements OnInit {
   items: ControlItem[];
   showSpinner = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private notification: NotificationService) {
     this.isInline = true;
 
     this.items = [
@@ -135,10 +137,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSuccess(): void {
-    // this.notification.success('Everything is fine!');
+    this.notification.success('Everything is fine!');
   }
 
   onError(): void {
-    // this.notification.error('Oops! Something is wrong');
+    this.notification.error('Oops! Something is wrong');
   }
 }
