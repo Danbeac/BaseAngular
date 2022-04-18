@@ -17,7 +17,6 @@ export class FormFieldComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.control && this.control.errors && Object.keys(this.control.errors)[0]);
   }
 
   hasError(): boolean {
